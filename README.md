@@ -78,7 +78,7 @@ with a {recipes} step such as
 The following example shows how {cuda.ml} can be used as a {parsnip}
 engine to build a SVM classifier.
 
-``` r
+```{r}
 library(dplyr, warn.conflicts = FALSE)
 library(parsnip)
 library(cuda.ml)
@@ -112,7 +112,7 @@ table(truth = test_data$Class, estimate = preds$.pred_class)
 The following example shows how {cuda.ml} can be used for unsupervised
 ML tasks such as k-means clustering.
 
-``` r
+```{r}
 library(cuda.ml)
 
 oils <- modeldata::oils
@@ -168,7 +168,7 @@ coloring based on the true label of each sample demonstrates how well
 the UMAP algorithm transforms different handwriting samples of the same
 digit into nearby points in a 2D embedding:
 
-``` r
+```{r}
 library(cuda.ml)
 library(ggplot2)
 
@@ -225,7 +225,7 @@ following about the MNIST dataset:
 Install the R package from CRAN, then prepare its native backend and
 runtime:
 
-``` r
+```{r}
 install.packages("cuda.ml")
 cuda.ml::cuda_ml_install()
 ```
@@ -238,7 +238,7 @@ Repeated calls reuse the prepared cache.
 For a deployment that only runs nvForest inference on a CPU, prepare the
 separate CUDA-free backend instead:
 
-``` r
+```{r}
 cuda.ml::cuda_ml_install(device = "cpu")
 ```
 
@@ -259,7 +259,7 @@ architectures, and source builds.
 Install the development version directly from GitHub with {pak}. It uses
 the same downloaded backend pathway:
 
-``` r
+```{r}
 # install.packages("pak")
 pak::pak("mlverse/cuda.ml")
 cuda.ml::cuda_ml_install()
@@ -272,7 +272,7 @@ cuda.ml::cuda_ml_install()
 Inspect MNIST images
 </summary>
 
-``` r
+```{r}
 plot_mnist(1:64)
 ```
 
